@@ -91,14 +91,14 @@ Take a screenshot of the results of your actions. */
 begin;
 
 delete from animals
-where date_of_birth > '2022-01-01'
+where date_of_birth > '2022-01-01';
 
 savepoint my_savepoint;
 
 update animals
 set weight_kg = weight_kg * (-1);
 
-rollback to savepoint;
+rollback to savepoint my_savepoint;
 
 update animals
 set weight_kg = weight_kg * (-1)
